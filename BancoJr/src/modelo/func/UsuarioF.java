@@ -1,4 +1,4 @@
-/*En ésta clase se creaán las funciones para registrar un nuevo usuario, modificar o eliminar
+/*En ésta clase se creaán los métodos para registrar un nuevo usuario, modificar o eliminarlo
 y almacenar una lista de todos los usuarios disponibles
 */
 package modelo.func;
@@ -35,16 +35,31 @@ public class UsuarioF {
     }
     public boolean modificar(Usuario usuario){ //Lo mismo que el anterior pero para modificar los usuarios
         if (buscar(usuario.getUsuario()) != -1){ //En éste caso si el valor en la lista no es igual a -1, nos indicará que el usuario ya existe entonces podremos modificarlo
-            usuarios.set(0, usuario);
+            
+            Usuario usuarioaux = obtener(usuario.getUsuario()); //Utilizamos una variable de usuario auxiliar
+            
+            usuarioaux.setPassword(usuario.getPassword());
+            usuarioaux.setNombre(usuario.getNombre());
+            usuarioaux.setApellido(usuario.getApellido());
+            usuarioaux.setEmail(usuario.getEmail()); //Con éstas funciones modificaremos los datos de un usuario ya establecido
+            return true;
+        } else{
+            return false;
         }
     }
-    public boolean eliminar(Usuario usuario){ //Estos tres nos darán un dato tipo boolean
+    public boolean eliminar(String usuario){ 
+        if (buscar(usuario) != -1){ //Si buscar usuario es diferente a -1
+            usuarios.remove(buscar(usuario)); //Con el método remove quitamos de la lista el usuario designado
+            return true;
+        } else{
+            return false;
+        }
     }
     public Usuario obtener(String usuario){ //Esto buscará la lista de usuarios disponibles, ver en que posición está y devolverá el objeto Usuario
-        if (buscar(usuario)) != -1 {
-            return usuarios.get(0)
+        if (buscar(usuario) != -1) { //Si buscar usuario es diferente a -1
+            return usuarios.get(buscar(usuario)); //Le pasamos el resultado de la busqueda
         }else{
-            
+            return null; //Con esto nos pasará un objeto vacío
         }
     }
 }
