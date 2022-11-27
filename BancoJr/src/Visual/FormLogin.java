@@ -95,9 +95,9 @@ public class FormLogin extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -129,7 +129,11 @@ public class FormLogin extends javax.swing.JFrame {
         // Botón de ingresar que recorrera la clase UsuarioL para el método autentificar
         if (!txtUsuario.getText().isEmpty()&&!txtPassword.getText().isEmpty()) { //Si las variables txtUsuario y txtPassword no están vacías
             if (UsuarioL.autentificar(txtUsuario.getText(), txtPassword.getText())){ //Si el usuario y contraseña son correctos llamamos al método autentificar
-                JOptionPane.showMessageDialog(this, "Bienvenido a Banco Jr"); //Y mostramos el mensaje
+                JOptionPane.showMessageDialog(this, "Bienvenido a Banco Jr"); //Mostramos el mensaje
+                this.dispose(); //Cuando ingresemos con el usuario y contraseña correctos 
+                
+                FormInicio formInicio = new FormInicio(UsuarioL.obtener(txtUsuario.getText())); //Creamos la variable que llame a la clase FormInicio y dentro del constructor le pedimos que obtenga el txtUsuario
+                formInicio.setVisible(true); //Y se nos mostrará el formulario de la página principal
             }else{
                 JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos"); //Si usuario o contraseña es incorrecto
             }
@@ -140,8 +144,9 @@ public class FormLogin extends javax.swing.JFrame {
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         //Botón para ingresar al panel de registro
-        FormRegistrar formRegistrarUsuario = new FormRegistrar(this, true); //Creamos el objeto, nos pide dos parámetros, lo llamamos a sí mismo
-        formRegistrarUsuario.setVisible(true); //Esto nos llevará a la clase FormRegistrar
+        this.dispose();
+        FormRegistrar formRegistrarUsuario = new FormRegistrar();
+        formRegistrarUsuario.setVisible(true); //Esto hará visible el formulario de Registro
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
@@ -173,10 +178,8 @@ public class FormLogin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormLogin().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new FormLogin().setVisible(true);
         });
     }
 

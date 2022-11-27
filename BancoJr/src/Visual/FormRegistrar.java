@@ -1,5 +1,6 @@
 /*
-Panel de Registrar Usuario
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Visual;
 
@@ -7,13 +8,16 @@ import javax.swing.JOptionPane;
 import modelo.logica.UsuarioL;
 import modelo.objetos.Usuario;
 
-public class FormRegistrar extends javax.swing.JDialog {
+/**
+ *
+ * @author Renzo
+ */
+public class FormRegistrar extends javax.swing.JFrame {
 
     /**
-     * Creates new form Registrar
+     * Creates new form FormRegistrar1
      */
-    public FormRegistrar(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public FormRegistrar() {
         initComponents();
         this.setLocationRelativeTo(null); //Con ésto centramos el formulario al medio de la pantalla
     }
@@ -27,14 +31,14 @@ public class FormRegistrar extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
@@ -44,32 +48,27 @@ public class FormRegistrar extends javax.swing.JDialog {
         btnRegistrarse = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel9.setText("BANCO JR");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Registrarse");
+        jLabel1.setText("Administración y Registro de usuarios");
+
+        jLabel4.setText("Nombre/s:");
+
+        jLabel5.setText("Apellido/s:");
+
+        jLabel8.setText("Correo Electrónico:");
 
         jLabel2.setText("Usuario:");
 
         jLabel3.setText("Contraseña:");
 
-        jLabel4.setText("Nombre/s");
-
-        jLabel5.setText("Apellido/s:");
-
         jLabel7.setText("Repetir Contraseña:");
-
-        jLabel8.setText("Correo Electrónico:");
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel9.setText("BANCO JR");
-
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
-            }
-        });
 
         btnRegistrarse.setText("Registrarse");
         btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
@@ -79,52 +78,70 @@ public class FormRegistrar extends javax.swing.JDialog {
         });
 
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel7))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNombre)
-                                    .addComponent(txtApellido)
-                                    .addComponent(txtEmail)
-                                    .addComponent(txtUsuario)
-                                    .addComponent(txtPasswordCheck)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)))
+                            .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnRegistrarse)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnModificar)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnEliminar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel1))))
-                .addGap(47, 47, 47))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnSalir)))
+                        .addGap(0, 51, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel7))
+                                .addGap(41, 41, 41)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtUsuario, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPasswordCheck, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtApellido, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addGap(50, 50, 50))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
@@ -152,45 +169,91 @@ public class FormRegistrar extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtPasswordCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrarse)
                     .addComponent(btnModificar)
-                    .addComponent(btnEliminar))
-                .addGap(30, 30, 30))
+                    .addComponent(btnEliminar)
+                    .addComponent(btnSalir))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
-
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         // Botón Registrarse
         //Verificamos que ninguno de los campos estén vacíos
         if (!txtNombre.getText().isEmpty()&&
-                !txtApellido.getText().isEmpty()&&
-                !txtEmail.getText().isEmpty()&&
-                !txtUsuario.getText().isEmpty()&&
-                !txtPassword.getText().isEmpty()&&
-                txtPasswordCheck.getText().equals(txtPassword.getText())) { //En éste caso requerimos que el campo de Repetir Contraseña equivalga al campo de Contraseña
-            
+            !txtApellido.getText().isEmpty()&&
+            !txtEmail.getText().isEmpty()&&
+            !txtUsuario.getText().isEmpty()&&
+            !txtPassword.getText().isEmpty()&&
+            !txtPasswordCheck.getText().isEmpty()&&
+            txtPasswordCheck.getText().equals(txtPassword.getText())
+        ) { //En éste caso requerimos que el campo de Repetir Contraseña equivalga al campo de Contraseña
+
             //Si los parámetros son correctos y no están vacíos entonces
             //Importamos la clase Usuario
             Usuario usuario = new Usuario(txtUsuario.getText(),
-                    txtPassword.getText(), txtNombre.getText(), txtApellido.getText(), txtEmail.getText());
+                txtPassword.getText(), txtNombre.getText(), txtApellido.getText(), txtEmail.getText());
             //Creamos un nuevo objeto e importamos la clase Usuario con los parámetros que requerimos del objeto Usuario tipo texto
             //Importamos la clase UsuarioL
             if (UsuarioL.insertar(usuario)){ //Llamamos al método insertar usuario
                 JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente"); //Nos muestra este mensaje y el usuario se ingresa al Array
             }else{
-                JOptionPane.showMessageDialog(this, "Usuario ya registrado"); //Si el usuario ya existe insertamos un mensaje
+                JOptionPane.showMessageDialog(this, "Nombre de usuario ya registrado"); //Si el usuario ya existe insertamos un mensaje
             }
-        }if (!txtPasswordCheck.getText().equals(txtPassword.getText())){
-                JOptionPane.showMessageDialog(this, "Las contraseñas no coinciden");} //Si las contraseñas no coinciden mostramos un mensaje de error
+        } else{
+            JOptionPane.showMessageDialog(this, "Complete todos los campos y asegurese de que las contraseñas coincidan");
+        }//Si no llenamos todos los valores
     }//GEN-LAST:event_btnRegistrarseActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        if (!txtNombre.getText().isEmpty()&&
+            !txtApellido.getText().isEmpty()&&
+            !txtEmail.getText().isEmpty()&&
+            !txtUsuario.getText().isEmpty()&&
+            !txtPassword.getText().isEmpty()&&
+            txtPasswordCheck.getText().equals(txtPassword.getText())) { //En éste caso requerimos que el campo de Repetir Contraseña equivalga al campo de Contraseña
+
+            //Si los parámetros son correctos y no están vacíos entonces
+            //Importamos la clase Usuario
+            Usuario usuario = new Usuario(txtUsuario.getText(),
+                txtPassword.getText(), txtNombre.getText(), txtApellido.getText(), txtEmail.getText());
+            //Creamos un nuevo objeto e importamos la clase Usuario con los parámetros que requerimos del objeto Usuario tipo texto
+            //Importamos la clase UsuarioL
+            if (UsuarioL.modificar(usuario)){ //Llamamos al método modificar usuario
+                JOptionPane.showMessageDialog(this, "Datos de usuario modificados exitosamente");
+            }else{
+                JOptionPane.showMessageDialog(this, "El usuario no existe");
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Rellene los datos del usuario a modificar"); //Si no igualamos ambos campos de contraseñas
+        }
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        if (!txtUsuario.getText().isEmpty()&&
+            !txtPassword.getText().isEmpty()&&
+            txtPasswordCheck.getText().equals(txtPassword.getText())) {
+
+            //Si los parámetros son correctos y no están vacíos entonces
+            if (UsuarioL.eliminar(txtUsuario.getText())){ //Llamamos al método eliminar
+                JOptionPane.showMessageDialog(this, "Usuario eliminado exitosamente"); //Nos muestra este mensaje y el usuario se elimina del Array
+            }else{
+                JOptionPane.showMessageDialog(this, "Usuario no encontrado"); //Si el usuario no existe
+            }
+        } else{
+            JOptionPane.showMessageDialog(this, "Coloque el nombre de usuario y contraseña para eliminarlo");
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        this.dispose(); //Con ésto cerramos el formulario actual
+        FormLogin formSalir = new FormLogin();
+        formSalir.setVisible(true); //Esto hará visible el formulario de Login
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,18 +283,9 @@ public class FormRegistrar extends javax.swing.JDialog {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                FormRegistrar dialog = new FormRegistrar(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new FormRegistrar().setVisible(true);
         });
     }
 
@@ -239,6 +293,7 @@ public class FormRegistrar extends javax.swing.JDialog {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegistrarse;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
