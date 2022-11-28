@@ -1,17 +1,16 @@
 /*En ésta clase se creaán los métodos para registrar un nuevo usuario, modificar o eliminarlo
 y almacenar una lista de todos los usuarios disponibles
 */
-package modelo.func;
+package funciones;
 
 import java.util.ArrayList;
 import java.util.List;
-import modelo.objetos.Usuario; //Clase Usuario, Lista y Array importados
 
 public class UsuarioF {
     private List<Usuario> usuarios; //Lista de usuarios
 
     public UsuarioF() { //Generamos un constructor vacío
-        usuarios = new ArrayList<>();
+        usuarios = new ArrayList<>(); //Creamos un Array
     }
     
     //Métodos para instertar, modificar o eliminar usuarios

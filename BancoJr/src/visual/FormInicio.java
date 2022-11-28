@@ -1,20 +1,13 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+Pantalla principal de movimientos
  */
-package Visual;
+package visual;
 
-import modelo.objetos.Usuario;
+import funciones.Usuario;
 
-/**
- *
- * @author Renzo
- */
 public class FormInicio extends javax.swing.JFrame {
+    
 
-    /**
-     * Creates new form FormInicio
-     */
     public FormInicio(Usuario usuario) { //Colocamos que en el constructor reciba Usuario para que nos reciba los parámetros del usuario que está logueado actualmente
         initComponents();
         this.setLocationRelativeTo(null); //Con ésto centramos el formulario al medio de la pantalla
@@ -102,10 +95,8 @@ public class FormInicio extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormInicio(null).setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new FormInicio(null).setVisible(true);
         });
     }
 

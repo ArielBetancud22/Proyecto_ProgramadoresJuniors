@@ -1,14 +1,10 @@
 /*
 En ésta clase se utilizarán todas las funciones lógicas
  */
-package modelo.logica;
-
-//Importamos las clases para hacer uso de los objetos
-import modelo.func.UsuarioF;
-import modelo.objetos.Usuario;
+package funciones;
 
 public class UsuarioL {
-    private static UsuarioF usuarioF = new UsuarioF(); //Objeto estático creado desde clase importada tipo privado
+    private static UsuarioF usuarioF = new UsuarioF(); //Objeto estático creado desde clase UsuarioF
     
     
     public static boolean autentificar(String usuario, String password){ //Método para validar el usuario, le pedimos dos parámetos: usuario y password tipo String

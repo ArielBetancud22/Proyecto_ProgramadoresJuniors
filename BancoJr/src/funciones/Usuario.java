@@ -1,7 +1,7 @@
-/*En ésta clase se crearán las variables de los datos de los usuarios
+/*En ésta clase se crearán las variables de los parámetros del usuario
 
 */
-package modelo.objetos;
+package funciones;
 
 //Creamos las variables privadas
 public class Usuario {
@@ -10,7 +10,7 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String email;
-
+    
     //Constructores generados con la opción Insert Code Constructor para todas las variables
     public Usuario(String usuario, String password, String nombre, String apellido, String email) {
         this.usuario = usuario;
@@ -20,7 +20,7 @@ public class Usuario {
         this.email = email;
     //Constructores generados con la opción Insert Code Constructor para todas las variables
     }
-    //Getters and Setters generados sin encapsulamiento
+    //Generamos los get and set de las variables
     public String getUsuario() {
         return usuario;
     }
@@ -59,6 +59,7 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
-    //Getters and Setters generados sin encapsulamiento
+    
     }
+    //Getters and Setters generados sin encapsulamiento
 }

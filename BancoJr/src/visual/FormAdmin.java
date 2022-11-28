@@ -1,23 +1,15 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+Formulario de ingreso del administrador para editar o eliminar cuentas
  */
-package Visual;
+package visual;
 
+import funciones.Usuario;
+import funciones.UsuarioL;
 import javax.swing.JOptionPane;
-import modelo.logica.UsuarioL;
-import modelo.objetos.Usuario;
 
-/**
- *
- * @author Renzo
- */
-public class FormRegistrar extends javax.swing.JFrame {
+public class FormAdmin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FormRegistrar1
-     */
-    public FormRegistrar() {
+    public FormAdmin() {
         initComponents();
         this.setLocationRelativeTo(null); //Con ésto centramos el formulario al medio de la pantalla
     }
@@ -70,7 +62,7 @@ public class FormRegistrar extends javax.swing.JFrame {
 
         jLabel7.setText("Repetir Contraseña:");
 
-        btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.setText("Registrar");
         btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarseActionPerformed(evt);
@@ -116,7 +108,7 @@ public class FormRegistrar extends javax.swing.JFrame {
                                 .addComponent(btnEliminar)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnSalir)))
-                        .addGap(0, 51, Short.MAX_VALUE))
+                        .addGap(0, 60, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +167,7 @@ public class FormRegistrar extends javax.swing.JFrame {
                     .addComponent(btnModificar)
                     .addComponent(btnEliminar)
                     .addComponent(btnSalir))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
@@ -272,20 +264,19 @@ public class FormRegistrar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormRegistrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormRegistrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormRegistrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormRegistrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new FormRegistrar().setVisible(true);
+            new FormAdmin().setVisible(true);
         });
     }
 
