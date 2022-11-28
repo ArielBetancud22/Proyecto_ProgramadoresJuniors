@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioF {
-    private List<Usuario> usuarios; //Lista de usuarios
+    private List<Usuario> usuarios; //Lista de usuarios, dentro del array irá el objeto Usuario
 
     public UsuarioF() { //Generamos un constructor vacío
         usuarios = new ArrayList<>(); //Creamos un Array
@@ -16,7 +16,7 @@ public class UsuarioF {
     //Métodos para instertar, modificar o eliminar usuarios
     public int buscar(String usuario){ //Método que recorrerá el Array y devolverá la posición en la que se encuentra el elemento usuario de tipo String
         int n = -1; //Lista inicializada en -1 hasta que n sea igual a i
-        for (int i = 0; i < usuarios.size(); i++){ //Método para recorrer toda la lista de usuarios. La función "usuarios.size" indicará el rango del recorrido
+        for (int i = 0; i < usuarios.size(); i++){ //Método para recorrer toda la lista de usuarios. La función "usuarios.size" indicará el rango del recorrido e iremos incrementando el valor con cada registro
             if (usuarios.get(i).getUsuario().equals(usuario)){ //Recorremos cada objeto de tipo String , get obtendrá el valor del objeto Usuario y lo igualará de String a "usuario"
                 n = i; //Si n encuentra la posición del usuario, es decir si se iguala a i entonces
                 break; //Sale del bucle para dejar de recorrer el array
@@ -26,7 +26,7 @@ public class UsuarioF {
     }
     public boolean insertar(Usuario usuario){ //Esto requerirá que indiquemos el objeto Usuario para que no se repita el mismo usuario al momento del registro
         if (buscar(usuario.getUsuario()) == -1){ //Método get para obtener el usuario, si el valor en la lista es igual a -1 
-            usuarios.add(usuario); //El valor será verdadero e ingresará el nuevo usuario a la lista
+            usuarios.add(usuario); //El valor será verdadero e ingresará el nuevo usuario a la lista        
             return true;
         }else{
             return false; //Si la posición en la lista no es igual a -1 entonces será falso y no agregará un nuevo usuario

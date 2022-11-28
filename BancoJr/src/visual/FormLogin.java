@@ -3,14 +3,18 @@ Panel de Login de Usuario
  */
 package visual;
 
+import funciones.Usuario;
 import javax.swing.JOptionPane;
 import funciones.UsuarioL;
+import java.util.List;
 
 public class FormLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form FormPrincipal
      */
+    public List<Usuario> usuarios;
+    
     public FormLogin() {
         initComponents();
         this.setLocationRelativeTo(null); //Con ésto centramos el formulario al medio de la pantalla
@@ -120,6 +124,7 @@ public class FormLogin extends javax.swing.JFrame {
         }else {
             JOptionPane.showMessageDialog(this, "Ingrese su usuario y contraseña"); //Si las variables están vacías
         }
+        System.out.println(usuarios);
         if(txtUsuario.getText().equals("admin")&&(txtPassword.getText().equals("admin"))){ //Para abrir el registro de usuario como administrador aclaramos que en los parámetros deba colocarse admin como usuario y contraseña
             FormAdmin formAdministrador = new FormAdmin(); //Al colocar admin en los campos nos llevará al formulario de edición de usuarios
             formAdministrador.setVisible(true);
