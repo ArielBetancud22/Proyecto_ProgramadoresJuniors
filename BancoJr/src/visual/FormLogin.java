@@ -111,24 +111,28 @@ public class FormLogin extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // Botón de ingresar que recorrera la clase UsuarioL para el método autentificar
-        if (!txtUsuario.getText().isEmpty()&&!txtPassword.getText().isEmpty()) { //Si las variables txtUsuario y txtPassword no están vacías
-            if (UsuarioL.autentificar(txtUsuario.getText(), txtPassword.getText())){ //Si el usuario y contraseña son correctos llamamos al método autentificar
-                JOptionPane.showMessageDialog(this, "Bienvenido a Banco Jr"); //Mostramos el mensaje
-                this.dispose(); //Cuando ingresemos con el usuario y contraseña correctos 
-                
-                FormInicio formInicio = new FormInicio(UsuarioL.obtener(txtUsuario.getText())); //Creamos la variable que llame a la clase FormInicio y dentro del constructor le pedimos que obtenga el txtUsuario
-                formInicio.setVisible(true); //Y se nos mostrará el formulario de la página principal
-            }else{
-                 //Si usuario o contraseña es incorrecto
+        if (!txtUsuario.getText().isEmpty() && !txtPassword.getText().isEmpty()) { //Si las variables txtUsuario y txtPassword no están vacías
+            if (UsuarioL.autentificar(txtUsuario.getText(), txtPassword.getText())) { //Si el usuario y contraseña son correctos llamamos al método autentificar
+
+                if (UsuarioL.validarSiEsAdmin(txtUsuario.getText(), txtPassword.getText())) { //Si el usuario y contraseña son correctos llamamos al método validarSiEsAdmin
+                    this.dispose(); //Con ésto cerramos el formulario actual
+                    FormAdmin formAdministrador = new FormAdmin(); //Al colocar admin en los campos nos llevará al formulario de edición de usuarios
+                    formAdministrador.setVisible(true);
+                    JOptionPane.showMessageDialog(this, "Ha ingresado como administrador");
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "Bienvenido a Banco Jr"); //Mostramos el mensaje
+                    this.dispose(); //Cuando ingresemos con el usuario y contraseña correctos
+
+                    FormInicio formInicio = new FormInicio(UsuarioL.obtener(txtUsuario.getText())); //Creamos la variable que llame a la clase FormInicio y dentro del constructor le pedimos que obtenga el txtUsuario
+                    formInicio.setVisible(true); //Y se nos mostrará el formulario de la página principal
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this, "El usuario o la contraseña no coinciden"); //Si las variables están vacías
             }
-        }else {
-            JOptionPane.showMessageDialog(this, "Ingrese su usuario y contraseña"); //Si las variables están vacías
-        }
-        System.out.println(usuarios);
-        if(txtUsuario.getText().equals("admin")&&(txtPassword.getText().equals("admin"))){ //Para abrir el registro de usuario como administrador aclaramos que en los parámetros deba colocarse admin como usuario y contraseña
-            FormAdmin formAdministrador = new FormAdmin(); //Al colocar admin en los campos nos llevará al formulario de edición de usuarios
-            formAdministrador.setVisible(true);
-            JOptionPane.showMessageDialog(this, "Ha ingresado como administrador");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se permiten campos vacios"); //Si las variables están vacías
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
 

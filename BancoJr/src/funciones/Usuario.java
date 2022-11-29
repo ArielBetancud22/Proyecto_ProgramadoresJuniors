@@ -10,6 +10,8 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String email;
+    private int saldo;
+    private boolean admin;
     
     //Constructores generados con la opción Insert Code Constructor para todas las variables
     public Usuario(String usuario, String password, String nombre, String apellido, String email) {
@@ -18,6 +20,8 @@ public class Usuario {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
+        this.saldo = saldo;
+        this.admin = false; //Cuando el registro de usuario sea cualquier valor que no sea "admin", el usuario será regular. Si en el registro el usuario es "admin", tendrá acceso a las funciones de administrador
     //Constructores generados con la opción Insert Code Constructor para todas las variables
     }
     //Generamos los get and set de las variables
@@ -61,5 +65,22 @@ public class Usuario {
         this.email = email;
     
     }
-    //Getters and Setters generados sin encapsulamiento
+    
+        public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+        //Getters and Setters generados sin encapsulamiento
+    }
+
 }

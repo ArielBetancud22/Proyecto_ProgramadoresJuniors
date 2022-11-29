@@ -5,15 +5,16 @@ package funciones;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class UsuarioF {
-    private List<Usuario> usuarios; //Lista de usuarios, dentro del array irá el objeto Usuario
+    private final List<Usuario> usuarios; //Lista de usuarios, dentro del array irá el objeto Usuario
 
     public UsuarioF() { //Generamos un constructor vacío
         usuarios = new ArrayList<>(); //Creamos un Array
     }
     
-    //Métodos para instertar, modificar o eliminar usuarios
+    //Métodos para insertar, modificar o eliminar usuarios
     public int buscar(String usuario){ //Método que recorrerá el Array y devolverá la posición en la que se encuentra el elemento usuario de tipo String
         int n = -1; //Lista inicializada en -1 hasta que n sea igual a i
         for (int i = 0; i < usuarios.size(); i++){ //Método para recorrer toda la lista de usuarios. La función "usuarios.size" indicará el rango del recorrido e iremos incrementando el valor con cada registro
@@ -61,4 +62,31 @@ public class UsuarioF {
             return null; //Con esto nos pasará un objeto vacío
         }
     }
+    //validarSiEsAdmin
+    public boolean validarSiEsAdmin(String usuario, String password){ //Método para validar si el usuario es administrador
+        if (buscar(usuario) != -1){ //Si buscar usuario es diferente a -1
+            Usuario usuarioaux = obtener(usuario); //Creamos una variable de tipo Usuario
+            if (usuarioaux.getPassword().equals(password)){ //Si la contraseña es igual a la que se ha ingresado
+                return usuarioaux.isAdmin(); //Retornar verdadero si es administrador
+            }else{
+                return false; //Si no es administrador retornar falso
+            }
+        }else{
+            return false;
+        }
+    }
+    
+    Scanner sc = new Scanner(System.in);
+    
+    public Usuario deposito (Usuario usuarios){
+        
+        double ingresarDeposito = sc.nextDouble();
+        
+        double depositar = usuarios.getSaldo() + ingresarDeposito;
+        
+        usuarios.setSaldo((int) depositar);
+        return null;
+        
+    }
+    
 }

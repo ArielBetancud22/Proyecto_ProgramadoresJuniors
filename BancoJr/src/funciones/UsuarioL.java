@@ -4,17 +4,14 @@ En ésta clase se utilizarán todas las funciones lógicas
 package funciones;
 
 public class UsuarioL {
-    private static UsuarioF usuarioF = new UsuarioF(); //Objeto estático creado desde clase UsuarioF
+    private static final UsuarioF usuarioF = new UsuarioF(); //Objeto estático creado desde clase UsuarioF
     
     
     public static boolean autentificar(String usuario, String password){ //Método para validar el usuario, le pedimos dos parámetos: usuario y password tipo String
         if(obtener(usuario)!=null){ //El método obtener usuario no debe ser nulo, con ésto verificaremos si existe un usuario registrado
             Usuario usuarioConsulta = obtener(usuario); //Creamos un nuevo objeto usuarioConsulta para usarlo en éste método y lo igualamos al método obtener(usuario)
-            if(usuarioConsulta.getUsuario().equals(usuario) && usuarioConsulta.getPassword().equals(password)){
-                return true; //Entonces si existe el usuario y coincide con la contraseña de dicho usuario retorna verdadero
-            }else{
-                return false; //Si no coincide retorna falso
-            }
+            return usuarioConsulta.getUsuario().equals(usuario) && usuarioConsulta.getPassword().equals(password); //Entonces si existe el usuario y coincide con la contraseña de dicho usuario retorna verdadero
+            //Si no coincide retorna falso
             
         }else{ 
             return false; //Caso contrario del primer if: el usuario no existe y retorna falso
@@ -41,6 +38,10 @@ public class UsuarioL {
     /*En los 4 métodos anteriores simplemente utilizamos los métodos creados en la clase "UsuarioF"
     y los retornamos
     */
+    
+    public static boolean validarSiEsAdmin(String usuario, String password) {
+        return usuarioF.validarSiEsAdmin(usuario, password);
+    }
     
 }
 
