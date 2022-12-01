@@ -3,13 +3,13 @@ Pantalla principal de movimientos
  */
 package visual;
 
-import funciones.Usuario;
+import banco.Entities.Cuenta;
 
 public class FormInicio extends javax.swing.JFrame {
      
     
     
-    public FormInicio(Usuario usuario) { //Colocamos que en el constructor reciba Usuario para que nos reciba los parámetros del usuario que está logueado actualmente
+    public FormInicio(Cuenta usuario) { //Colocamos que en el constructor reciba Cuenta para que nos reciba los parámetros del usuario que está logueado actualmente
         initComponents();
         this.setLocationRelativeTo(null); //Con ésto centramos el formulario al medio de la pantalla
         lblNombre.setText(usuario.getNombre() + " " + usuario.getApellido()); //Aquí colocamos en el Inicio el nombre y el apellido del usuario conectado

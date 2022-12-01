@@ -4,8 +4,8 @@ Formulario de registro
 package visual;
 
 import javax.swing.JOptionPane;
-import funciones.UsuarioL;
-import funciones.Usuario;
+import banco.Entities.Logica;
+import banco.Entities.Cuenta;
 
 public class FormRegistrar extends javax.swing.JFrame {
 
@@ -160,14 +160,14 @@ public class FormRegistrar extends javax.swing.JFrame {
         ) { //En éste caso requerimos que el campo de Repetir Contraseña equivalga al campo de Contrase?a
 
             //Si los parámetros son correctos y no están vacíos entonces
-            //Importamos la clase Usuario
-            Usuario usuario = new Usuario(txtUsuario.getText(),
+            //Importamos la clase Cuenta
+            Cuenta usuario = new Cuenta(txtUsuario.getText(),
                 txtPassword.getText(), txtNombre.getText(), txtApellido.getText(), txtEmail.getText());
 
             if (usuario.getUsuario().equals("admin")) usuario.setAdmin(true);
-            //Creamos un nuevo objeto e importamos la clase Usuario con los parámetros que requerimos del objeto Usuario tipo texto
-            //Importamos la clase UsuarioL
-            if (UsuarioL.insertar(usuario)){ //Llamamos al método insertar usuario
+            //Creamos un nuevo objeto e importamos la clase Cuenta con los parámetros que requerimos del objeto Cuenta tipo texto
+            //Importamos la clase Logica
+            if (Logica.insertar(usuario)){ //Llamamos al método insertar usuario
                 JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente"); //Nos muestra este mensaje y el usuario se ingresa al Array
                 this.dispose(); //Con ésto cerramos el formulario actual
                 FormLogin formSalir = new FormLogin();

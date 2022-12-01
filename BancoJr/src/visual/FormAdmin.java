@@ -3,8 +3,8 @@ Formulario de ingreso del administrador para editar o eliminar cuentas
  */
 package visual;
 
-import funciones.Usuario;
-import funciones.UsuarioL;
+import banco.Entities.Cuenta;
+import banco.Entities.Logica;
 import javax.swing.JOptionPane;
 
 public class FormAdmin extends javax.swing.JFrame {
@@ -197,12 +197,12 @@ public class FormAdmin extends javax.swing.JFrame {
         ) { //En éste caso requerimos que el campo de Repetir Contraseña equivalga al campo de Contraseña
 
             //Si los parámetros son correctos y no están vacíos entonces
-            //Importamos la clase Usuario
-            Usuario usuario = new Usuario(txtUsuario.getText(),
+            //Importamos la clase Cuenta
+            Cuenta usuario = new Cuenta(txtUsuario.getText(),
                 txtPassword.getText(), txtNombre.getText(), txtApellido.getText(), txtEmail.getText());
-            //Creamos un nuevo objeto e importamos la clase Usuario con los parámetros que requerimos del objeto Usuario tipo texto
-            //Importamos la clase UsuarioL
-            if (UsuarioL.insertar(usuario)){ //Llamamos al método insertar usuario
+            //Creamos un nuevo objeto e importamos la clase Cuenta con los parámetros que requerimos del objeto Cuenta tipo texto
+            //Importamos la clase Logica
+            if (Logica.insertar(usuario)){ //Llamamos al método insertar usuario
                 JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente"); //Nos muestra este mensaje y el usuario se ingresa al Array
             }else{
                 JOptionPane.showMessageDialog(this, "Nombre de usuario ya registrado"); //Si el usuario ya existe insertamos un mensaje
@@ -221,12 +221,12 @@ public class FormAdmin extends javax.swing.JFrame {
             txtPasswordCheck.getText().equals(txtPassword.getText())) { //En éste caso requerimos que el campo de Repetir Contraseña equivalga al campo de Contraseña
 
             //Si los parámetros son correctos y no están vacíos entonces
-            //Importamos la clase Usuario
-            Usuario usuario = new Usuario(txtUsuario.getText(),
+            //Importamos la clase Cuenta
+            Cuenta usuario = new Cuenta(txtUsuario.getText(),
                 txtPassword.getText(), txtNombre.getText(), txtApellido.getText(), txtEmail.getText());
-            //Creamos un nuevo objeto e importamos la clase Usuario con los parámetros que requerimos del objeto Usuario tipo texto
-            //Importamos la clase UsuarioL
-            if (UsuarioL.modificar(usuario)){ //Llamamos al método modificar usuario
+            //Creamos un nuevo objeto e importamos la clase Cuenta con los parámetros que requerimos del objeto Cuenta tipo texto
+            //Importamos la clase Logica
+            if (Logica.modificar(usuario)){ //Llamamos al método modificar usuario
                 JOptionPane.showMessageDialog(this, "Datos de usuario modificados exitosamente");
             }else{
                 JOptionPane.showMessageDialog(this, "El usuario no existe");
@@ -242,7 +242,7 @@ public class FormAdmin extends javax.swing.JFrame {
             txtPasswordCheck.getText().equals(txtPassword.getText())) {
 
             //Si los parámetros son correctos y no están vacíos entonces
-            if (UsuarioL.eliminar(txtUsuario.getText())){ //Llamamos al método eliminar
+            if (Logica.eliminar(txtUsuario.getText())){ //Llamamos al método eliminar
                 JOptionPane.showMessageDialog(this, "Usuario eliminado exitosamente"); //Nos muestra este mensaje y el usuario se elimina del Array
             }else{
                 JOptionPane.showMessageDialog(this, "Usuario no encontrado"); //Si el usuario no existe

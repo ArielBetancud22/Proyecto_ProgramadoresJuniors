@@ -1,11 +1,11 @@
 /*
-Panel de Login de Usuario
+Panel de Login de Cuenta
  */
 package visual;
 
-import funciones.Usuario;
+import banco.Entities.Cuenta;
 import javax.swing.JOptionPane;
-import funciones.UsuarioL;
+import banco.Entities.Logica;
 import java.util.List;
 
 public class FormLogin extends javax.swing.JFrame {
@@ -13,7 +13,7 @@ public class FormLogin extends javax.swing.JFrame {
     /**
      * Creates new form FormPrincipal
      */
-    public List<Usuario> usuarios;
+    public List<Cuenta> usuarios;
     
     public FormLogin() {
         initComponents();
@@ -110,11 +110,11 @@ public class FormLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        // Botón de ingresar que recorrera la clase UsuarioL para el método autentificar
+        // Botón de ingresar que recorrera la clase Logica para el método autentificar
         if (!txtUsuario.getText().isEmpty() && !txtPassword.getText().isEmpty()) { //Si las variables txtUsuario y txtPassword no están vacías
-            if (UsuarioL.autentificar(txtUsuario.getText(), txtPassword.getText())) { //Si el usuario y contraseña son correctos llamamos al método autentificar
+            if (Logica.autentificar(txtUsuario.getText(), txtPassword.getText())) { //Si el usuario y contraseña son correctos llamamos al método autentificar
 
-                if (UsuarioL.validarSiEsAdmin(txtUsuario.getText(), txtPassword.getText())) { //Si el usuario y contraseña son correctos llamamos al método validarSiEsAdmin
+                if (Logica.validarSiEsAdmin(txtUsuario.getText(), txtPassword.getText())) { //Si el usuario y contraseña son correctos llamamos al método validarSiEsAdmin
                     this.dispose(); //Con ésto cerramos el formulario actual
                     FormAdmin formAdministrador = new FormAdmin(); //Al colocar admin en los campos nos llevará al formulario de edición de usuarios
                     formAdministrador.setVisible(true);
@@ -124,7 +124,7 @@ public class FormLogin extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Bienvenido a Banco Jr"); //Mostramos el mensaje
                     this.dispose(); //Cuando ingresemos con el usuario y contraseña correctos
 
-                    FormInicio formInicio = new FormInicio(UsuarioL.obtener(txtUsuario.getText())); //Creamos la variable que llame a la clase FormInicio y dentro del constructor le pedimos que obtenga el txtUsuario
+                    FormInicio formInicio = new FormInicio(Logica.obtener(txtUsuario.getText())); //Creamos la variable que llame a la clase FormInicio y dentro del constructor le pedimos que obtenga el txtUsuario
                     formInicio.setVisible(true); //Y se nos mostrará el formulario de la página principal
                 }
 
