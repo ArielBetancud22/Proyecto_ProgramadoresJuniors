@@ -4,6 +4,7 @@ import bank.entidades.Cuenta;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Cajero {
     
     Scanner sc = new Scanner(System.in).useDelimiter("\n");
@@ -75,7 +76,7 @@ public class Cajero {
     }
 //ingresar a la cuenta
     public void ingresar() {
-        System.out.print("Nombre: "); //pide el nombre y el password
+        System.out.print("Nombre: "); //pide credenciales (nombre y pasword)
         String name = sc.next();
         System.out.print("Password: ");
         String passw = sc.next();
@@ -103,7 +104,7 @@ public class Cajero {
             if (name.equals(a.getNombre()) && passw.equals(a.getPassword())) { //si coinciden con la cuenta del array 
                 cuenta = a;
                 System.out.println("Su cuenta ha sido eliminada exitosamente");
-                cuentas.remove(cuenta); //se remueve del array, la cuenta ya no existe
+                cuentas.remove(cuenta); //se remueve del array, y la cuenta ya no existe
                 menuDelCajero();//como ya no existe vuelve al menu principal
                 break;
             } else {

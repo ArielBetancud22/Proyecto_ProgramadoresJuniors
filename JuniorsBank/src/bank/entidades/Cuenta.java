@@ -97,5 +97,6 @@ public class Cuenta {
     public void consultarSaldo() {
         System.out.println("Saldo Actual: " + saldo);
     }
+    //Realizamos consulta de saldo
 
 }
