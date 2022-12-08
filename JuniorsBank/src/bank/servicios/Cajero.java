@@ -93,9 +93,9 @@ public class Cajero {
     }
 //eliminar cuenta
     public void eliminarCuenta() {
-        System.out.print("Nombre de la cuenta a eliminar: ");//pido nombre y contraseña para eliminar
+        System.out.print("Ingrese el nombre de la cuenta a eliminar: ");//pido nombre y contraseña para eliminar
         String name = sc.next();
-        System.out.print("Ingrese password para eliminar la contraseña: ");
+        System.out.print("Ingrese el password de la cuenta a eliminar: ");
         String passw = sc.next();
         Cuenta cuenta = null;
         for (Cuenta a : cuentas) {

@@ -71,18 +71,26 @@ public class Cuenta {
     public void depositarDinero(double ingreso) {
         System.out.print("Cantidad de dinero a ingresar: ");
         ingreso = sc.nextDouble(); //escribo el dinero a ingresar
-        saldo = saldo + ingreso; //se lo sumo al saldo actual, y ahora tendré un nuevo saldo actual.
-
+        if(ingreso > 0){ //Pedimos que el ingreso sea un número mayor a 0 y positivo
+            saldo = saldo + ingreso; //se lo sumo al saldo actual, y ahora tendré un nuevo saldo actual.
+            System.out.println("Depósito realizado con éxito");
+            }else{
+            System.out.println("Ingrese un monto válido");
+        }
     }
 
     public void retirarDinero(double retiro) {
         System.out.print("Cantidad de dinero a retirar: ");
         retiro = sc.nextDouble();
+        if (retiro > 0){ //Si el retiro es un valor mayor que 0 y positivo
         if (retiro > saldo) {
-            saldo = 0;
             System.out.println("El monto excede sus fondos");
-        } else {
+        }else{
             saldo = saldo - retiro;
+            System.out.println("Retiro realizado con éxito");
+            }
+        } else{
+            System.out.println("Ingrese un monto válido");
         }
     }
 
