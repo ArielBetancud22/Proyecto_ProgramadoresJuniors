@@ -67,17 +67,7 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
-    public void crearCuenta() {
-        System.out.print("Nombre: ");
-        nombre = sc.next();
-        System.out.print("Apellido: ");
-        apellido = sc.next();
-        System.out.print("Email: ");
-        email = sc.next();
-        System.out.print("Password: ");
-        password = sc.next();
-    }
-
+ 
     public void depositarDinero(double ingreso) {
         System.out.print("Cantidad de dinero a ingresar: ");
         ingreso = sc.nextDouble(); //escribo el dinero a ingresar
