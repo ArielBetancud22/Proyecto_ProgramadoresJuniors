@@ -44,7 +44,7 @@ public class Cajero {
             System.out.println("3.Salir");
             System.out.println("4.Mostrar cuentas");
             System.out.println("---JUNIORS-BANK---");
-            System.out.println("Digite una opciÛn:");
+            System.out.println("Digite una opci√≥n:");
             valorMenu1 = sc.next(); //elijo la opcion y depende eso hara las cosas del switch
             switch (valorMenu1) {
                 case "1":
@@ -68,13 +68,13 @@ public class Cajero {
                     }
                     break;
                 default:
-                    System.out.println("Digite una opciÛn v·lida");
+                    System.out.println("Digite una opci√≥n v√°lida");
                     break;
             }
         }
 
     }
-//ingresar a la cuenta
+// Ingresar a la cuenta
     public void ingresar() {
         System.out.print("Nombre: "); //pide credenciales (nombre y pasword)
         String name = sc.next();
@@ -83,18 +83,18 @@ public class Cajero {
         Cuenta cuenta = null; //cuenta en null
         for (Cuenta a : cuentas) { //este for va recorriendo las cuentas del arraylist
             //System.out.println(a.getApellido() + "  acaaa");
-            if (name.equals(a.getNombre()) && passw.equals(a.getPassword())) { //si el nombre y el password son iguales a los de la cuenta que est· en el array 
+            if (name.equals(a.getNombre()) && passw.equals(a.getPassword())) { //si el nombre y el password son iguales a los de la cuenta que est√° en el array 
                 cuenta = a; //cuenta pasa a ser la cuenta del array
                 menuCuenta(cuenta);//llamo al menu cuenta, es decir inicio sesion en el cajero en mi cuenta
                 break;
             }else {
-                System.out.println("El usuario o contraseÒa no coinciden"); //si no lo hace de nuevo
+                System.out.println("El usuario o contrase√±a no coinciden"); //si no lo hace de nuevo
             }
         }
     }
-//eliminar cuenta
+// Eliminar cuenta
     public void eliminarCuenta() {
-        System.out.print("Ingrese el nombre de la cuenta a eliminar: ");//pido nombre y contraseÒa para eliminar
+        System.out.print("Ingrese el nombre de la cuenta a eliminar: ");//pido nombre y contrase√±a para eliminar
         String name = sc.next();
         System.out.print("Ingrese el password de la cuenta a eliminar: ");
         String passw = sc.next();
@@ -108,7 +108,7 @@ public class Cajero {
                 menuDelCajero();//como ya no existe vuelve al menu principal
                 break;
             } else {
-                System.out.println("El usuario o contraseÒa no coinciden");
+                System.out.println("El usuario o contrase√±a no coinciden");
             }
         }
     }
@@ -117,7 +117,7 @@ public class Cajero {
         volver = false; 
         while (volver == false) {//mientras volver sea false muestro el menu de opciones
             System.out.println("-----BIENVENIDO-----");
-            System.out.println(cuenta1.getNombre()); //Con Èsto mostramos un mensaje de bienvenida + el nombre del usuario que ingresa en el momento
+            System.out.println(cuenta1.getNombre()); //Con √©sto mostramos un mensaje de bienvenida + el nombre del usuario que ingresa en el momento
             System.out.println("---JUNIORS-BANK---");
             System.out.println("1.Depositar");
             System.out.println("2.Retirar");
@@ -125,7 +125,7 @@ public class Cajero {
             System.out.println("4.Eliminar cuenta");
             System.out.println("5.Salir de la cuenta");
             System.out.println("---JUNIORS-BANK---");
-            System.out.println("Digite una opciÛn:");
+            System.out.println("Digite una opci√≥n:");
             valorMenu2 = sc.next(); //segun lo que selecciones llama a los metodos de la clase cuenta o a algunos de esta misma clase
             switch (valorMenu2) {
                 case "1":
@@ -145,7 +145,7 @@ public class Cajero {
                     menuDelCajero();// vuelve al menu del cajero
                     break;
                 default:
-                    System.out.println("Digite una opciÛn v·lida");
+                    System.out.println("Digite una opci√≥n v√°lida");
                     break;
             }
         }
