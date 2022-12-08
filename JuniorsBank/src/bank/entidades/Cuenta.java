@@ -80,6 +80,7 @@ public class Cuenta {
         retiro = sc.nextDouble();
         if (retiro > saldo) {
             saldo = 0;
+            System.out.println("El monto excede sus fondos");
         } else {
             saldo = saldo - retiro;
         }
