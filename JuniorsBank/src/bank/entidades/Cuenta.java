@@ -90,7 +90,7 @@ public class Cuenta {
             System.out.println("Retiro realizado con éxito");
             }
         } else{
-            System.out.println("Ingrese un monto válido");
+            System.out.println("Por favor ingrese un monto válido");
         }
     }
 
